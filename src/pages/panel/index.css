@@ -1,0 +1,9 @@
+.wrap {
+  padding: 0 40px
+}
+
+.my-tag {
+  width: 180px;
+  height: 80px!important;
+  line-height: 80px!important;
+}

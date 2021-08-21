@@ -1,10 +1,10 @@
 import axios from 'axios'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+  // BrowserRouter as Router,
+  // Switch,
+  // Route,
   // Link,
-  Redirect,
+  // Redirect,
   // useHistory,
   // useLocation
 } from "react-router-dom";

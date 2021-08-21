@@ -7,9 +7,6 @@ import store from '../../store'
 import './index.css'
 
 class Panel extends Component {
-  constructor (props) {
-    super(props)
-  }
 
   componentDidMount () {
     console.log('panel', store)

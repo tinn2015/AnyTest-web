@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { Form, Input, Button, Checkbox, message } from 'antd';
-import { inject } from 'mobx-react'
+// import { inject } from 'mobx-react'
 import globalStore from '../../store/globalStore'
 import { login } from '../../utils/http'
 

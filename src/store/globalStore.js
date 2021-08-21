@@ -1,4 +1,4 @@
-import {makeObservable, observable, action, autorun, computed} from 'mobx'
+import {makeObservable, observable, action} from 'mobx'
 
 class GlobalStore {
   isLogin = window.localStorage.getItem('Authorization') ? true : false

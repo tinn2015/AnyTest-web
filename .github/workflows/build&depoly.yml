@@ -45,13 +45,6 @@ jobs:
     runs-on: [ubuntu-latest]
     needs: [build]
     steps:
-      - name: Download bundle
-        uses: actions/download-artifact@master
-        with:
-          name: build # Download artifact named `my_artifact_name` (matches build step: Upload bundle)
-          path: build # Optional, downloads to current working directory under folder {artifact_name} if not specified
-      - name: Debug Files
-        run: ls
       - name: Upload to FTP
         uses: isthatcentered/dist-to-ftp@master
         with:

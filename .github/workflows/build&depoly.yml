@@ -49,7 +49,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: my_artifact_name # Download artifact named `my_artifact_name` (matches build step: Upload bundle)
-          path: dist # Optional, downloads to current working directory under folder {artifact_name} if not specified
+          path: build # Optional, downloads to current working directory under folder {artifact_name} if not specified
       - name: Debug Files
         run: ls
       - name: Upload to FTP
@@ -59,7 +59,7 @@ jobs:
           password: ${{ secrets.password }} # Ftp password Ex:
           host: ${{ secrets.host }} # Ftp host Ex:
           # port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
-          path: dist # Folder to deploy Ex: apps/frontend/dist or dist
+          path: build # Folder to deploy Ex: apps/frontend/dist or dist
           into: /root/www/html # Where to place the files in your ftp
           cleanupExisting: true # (Optional), Remove already existing files inside FTP destination folder (`into` parameter)
       - run: echo "🍏 This job's status is ${{ job.status }}."

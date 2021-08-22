@@ -26,8 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: echo "🎉 env log ${{ secrets.password }} event."
-    - run: echo "🎉 env log ${{ secrets.dev.password }} event."
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
     - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
     - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -51,8 +49,8 @@ jobs:
         uses: isthatcentered/dist-to-ftp@master
         with:
           user: root # Ftp user Ex:
-          password: ${{ env.dev.password }} # Ftp password Ex:
-          host: ${{ env.dev.host }} # Ftp host Ex:
+          password: ${{ secrets.password }} # Ftp password Ex:
+          host: ${{ secrets.host }} # Ftp host Ex:
           # port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
           path: build # Folder to deploy Ex: apps/frontend/dist or dist
           into: /root/www/html # Where to place the files in your ftp

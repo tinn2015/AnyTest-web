@@ -37,6 +37,7 @@ jobs:
     # - run: npm run build --if-present
     - name: List files in the repository
       run: |
+        pwd
         cd build
         ls
         ls ${{ github.workspace }}

@@ -36,8 +36,8 @@ jobs:
     - name: List files in the repository
       run: |
         ls ${{ github.workspace }}
-    # - run: npm install
-    # - run: npm run build --if-present
+    - run: npm install
+    - run: npm run build --if-present
     - run: echo "🍏 build success."
     
   deploy:
@@ -52,5 +52,5 @@ jobs:
           REMOTE_USER: 'root'
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
           SOURCE: 'build/'
-          TARGET: '/root/wwww/html/'
+          TARGET: '/root/www/html/'
       - run: echo "🍏 This job's status is ${{ job.status }}."

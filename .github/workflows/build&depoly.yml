@@ -47,7 +47,7 @@ jobs:
     steps:
       - name: ssh depoly
         uses: hengkx/ssh-deploy@v1.0.1
-        with:
+        env:
           HOST: ${{ secrets.host }}
           USERNAME: 'root'
           PASSWORD: ${{ secrets.password }}

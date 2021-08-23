@@ -63,6 +63,7 @@ jobs:
     steps:
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@v2.1.5      #可以访问的仓库，实现的上传服务器步骤被封装在此action
+        run: ls
         env:
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}  #这个是阿里云的私钥
           ARGS: "-avzr --delete"

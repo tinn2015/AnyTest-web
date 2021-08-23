@@ -50,7 +50,7 @@ jobs:
         env:
           REMOTE_HOST: ${{ secrets.host }}
           REMOTE_USER: 'root'
-          SSH_PRIVATE_KEY: ${{ secrets.password }}
+          SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
           SOURCE: 'build/'
           TARGET: '/root/wwww/html/'
       - run: echo "🍏 This job's status is ${{ job.status }}."

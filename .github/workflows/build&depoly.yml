@@ -51,6 +51,6 @@ jobs:
           REMOTE_HOST: ${{ secrets.host }}
           REMOTE_USER: 'root'
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
-          SOURCE: '/build/'
+          SOURCE: 'build/'
           TARGET: '/root/www/html/'
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -66,7 +66,7 @@ jobs:
           HOST: ${{ secrets.host }}
           USERNAME: 'root'
           PORT: 22
-          key: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
+          KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
         with:
           source: 'build/'
           target: '/root/www/html/'

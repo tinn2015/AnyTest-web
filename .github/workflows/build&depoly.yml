@@ -49,7 +49,8 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           REMOTE_HOST: ${{ secrets.host }}
-          REMOTE_USER: 'root'
+          ARGS: '-rltgoDzvO --delete'
+          REMOTE_USER: '229813475@qq.com'
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
           SOURCE: 'build/'
           TARGET: '/root/www/html/'

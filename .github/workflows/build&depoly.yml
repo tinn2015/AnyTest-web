@@ -46,12 +46,11 @@ jobs:
     needs: [build]
     steps:
       - name: ssh depoly
-        uses: hengkx/ssh-deploy@v1.0.1
+        uses: easingthemes/ssh-deploy@main
         env:
-          HOST: ${{ secrets.host }}
-          USERNAME: 'root'
-          PASSWORD: ${{ secrets.password }}
+          REMOTE_HOST: ${{ secrets.host }}
+          REMOTE_USER: 'root'
+          SSH_PRIVATE_KEY: ${{ secrets.password }}
           SOURCE: 'build/'
           TARGET: '/root/wwww/html/'
-          AFTER_COMMAND: 'echo "${{ job.status }}"'
       - run: echo "🍏 This job's status is ${{ job.status }}."

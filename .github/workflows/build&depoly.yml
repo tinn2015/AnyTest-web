@@ -50,7 +50,7 @@ jobs:
         env:
           REMOTE_HOST: ${{ secrets.host }}
           ARGS: '-rltgoDzvO --delete'
-          REMOTE_USER: '229813475@qq.com'
+          REMOTE_USER: 'root'
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
           SOURCE: 'build/'
           TARGET: '/root/www/html/'

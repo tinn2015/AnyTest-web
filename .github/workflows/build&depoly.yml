@@ -45,14 +45,14 @@ jobs:
     runs-on: [ubuntu-latest]
     needs: [build]
     steps:
-      - name: Upload to FTP
-        uses: isthatcentered/dist-to-ftp@master
+      - name: ssh depoly
+        uses: hengkx/ssh-deploy@v1.0.1
         with:
-          user: root # Ftp user Ex:
-          password: ${{ secrets.password }} # Ftp password Ex:
-          host: ${{ secrets.host }} # Ftp host Ex:
-          # port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
-          path: build # Folder to deploy Ex: apps/frontend/dist or dist
-          into: /root/www/html # Where to place the files in your ftp
-          cleanupExisting: true # (Optional), Remove already existing files inside FTP destination folder (`into` parameter)
+          HOST: ${{ secrets.host }}
+          USERNAME: 'root'
+          PASSWORD: ${{ secrets.password }}
+          PORT: 22
+          SOURCE: 'build/'
+          TARGET: '/root/wwww/html/'
+          # AFTER_COMMAND: 'npm run stop && npm install --production && npm run start'
       - run: echo "🍏 This job's status is ${{ job.status }}."

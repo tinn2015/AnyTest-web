@@ -51,7 +51,6 @@ jobs:
           HOST: ${{ secrets.host }}
           USERNAME: 'root'
           PASSWORD: ${{ secrets.password }}
-          PORT: 22
           SOURCE: 'build/'
           TARGET: '/root/wwww/html/'
           # AFTER_COMMAND: 'npm run stop && npm install --production && npm run start'

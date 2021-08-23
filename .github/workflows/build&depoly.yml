@@ -68,6 +68,6 @@ jobs:
           PORT: 22
           KEY: ${{ secrets.TENXUNYUNSSHPRIVATEKEY }}
         with:
-          source: 'build/'
+          source: '/build/'
           target: '/root/www/html/'
       - run: echo "🍏 This job's status is ${{ job.status }}."

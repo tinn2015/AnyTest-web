@@ -53,5 +53,4 @@ jobs:
           PASSWORD: ${{ secrets.password }}
           SOURCE: 'build/'
           TARGET: '/root/wwww/html/'
-          # AFTER_COMMAND: 'npm run stop && npm install --production && npm run start'
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          AFTER_COMMAND: 'echo "🍏 This job's status is ${{ job.status }}."'

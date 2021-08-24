@@ -20,10 +20,10 @@ jobs:
     - name: Deploy to Server
       uses: wlixcc/SFTP-Deploy-Action@v1.0
       with:
-          ssh_private_key: ${{ secrets.TENXUNYUN_SSH_PRIVATE_KEY }}
+          ssh_private_key: ${{ secrets.PRIVATE_KEY }}
           # ARGS: "-rltgoDzvO --delete"
           local_path: "build/"
           server: ${{ secrets.HOST }}
-          username: "root"
+          username: "github"
           remote_path: "/root/www/build"
           # EXCLUDE: "/dist/, /node_modules/"

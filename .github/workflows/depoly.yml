@@ -32,5 +32,6 @@ jobs:
       env:
         DEPLOY_KEY: ${{secrets.PRIVATE_KEY}}
         UPLOAD_DIR: 'build'
+        USER: 'github'
       with:
-        args: "-avzr --delete github@${{secrets.HOST}}:${{env.UPLOAD_DIR}}"
+        args: "-avzr --delete ${{env.USER}}@${{secrets.HOST}}:${{env.UPLOAD_DIR}}"

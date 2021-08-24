@@ -71,8 +71,8 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUN_SSH_PRIVATE_KEY }}  #这个是阿里云的私钥
           ARGS: "-avzr --delete"
-          SOURCE: "build"
+          SOURCE: "./"
           REMOTE_HOST: ${{ secrets.HOST }}    #阿里云的 ip
-          REMOTE_USER: "tinn"    #阿里云用户
+          REMOTE_USER: "root"    #阿里云用户
           TARGET: "/root/www/build"       #被部署的服务器路径
 

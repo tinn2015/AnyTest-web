@@ -69,10 +69,10 @@ jobs:
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@main      #可以访问的仓库，实现的上传服务器步骤被封装在此action
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.tenxunyun_ssh_private_key }}  #这个是阿里云的私钥
+          SSH_PRIVATE_KEY: ${{ secrets.TENXUNYUN_SSH_PRIVATE_KEY }}  #这个是阿里云的私钥
           ARGS: "-avzr --delete"
           SOURCE: "build"
-          REMOTE_HOST: ${{ secrets.host }}    #阿里云的 ip
+          REMOTE_HOST: ${{ secrets.HOST }}    #阿里云的 ip
           REMOTE_USER: "tinn"    #阿里云用户
           TARGET: "/root/www/build"       #被部署的服务器路径
 

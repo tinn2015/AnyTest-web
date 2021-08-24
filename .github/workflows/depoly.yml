@@ -1,0 +1,36 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install npm dependencies
+      # run: npm install
+    - name: Run build task
+      # run: npm run build --if-present
+    # - name: Deploy to Server
+    #   uses: wlixcc/SFTP-Deploy-Action@v1.0
+    #   with:
+    #       ssh_private_key: ${{ secrets.PRIVATE_KEY }}
+    #       # ARGS: "-rltgoDzvO --delete"
+    #       local_path: "build/"
+    #       server: ${{ secrets.HOST }}
+    #       username: "github"
+    #       remote_path: "/root/www/build"
+    #       # EXCLUDE: "/dist/, /node_modules/"
+    - name: rsync deployments
+      uses: contention/rsync-deployments@v1.0.0
+      env:
+        DEPLOY_KEY: ${{secrets.PRIVATE_KEY}}
+        UPLOAD_DIR: 'build'
+      with:
+        args: "-avzr --delete github@${{secrets.HOST}}:${{env.UPLOAD_DIR}}"

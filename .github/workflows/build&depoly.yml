@@ -74,5 +74,5 @@ jobs:
           SOURCE: "/build"
           REMOTE_HOST: ${{ secrets.host }}    #阿里云的 ip
           REMOTE_USER: "root"    #阿里云用户
-          TARGET: "/root/www/html"       #被部署的服务器路径 
+          TARGET: "/root/www/build"       #被部署的服务器路径 
 

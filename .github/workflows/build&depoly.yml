@@ -73,6 +73,6 @@ jobs:
           ARGS: "-avzr --delete"
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.host }}    #阿里云的 ip
-          REMOTE_USER: "douqiting"    #阿里云用户
+          REMOTE_USER: "tinn"    #阿里云用户
           TARGET: "/root/www/build"       #被部署的服务器路径
 

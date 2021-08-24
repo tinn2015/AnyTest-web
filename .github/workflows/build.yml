@@ -19,7 +19,7 @@ jobs:
       run: npm run build --if-present
     - name: Deploy to Server
       uses: wlixcc/SFTP-Deploy-Action@v1.0
-      env:
+      with:
           ssh_private_key: ${{ secrets.TENXUNYUN_SSH_PRIVATE_KEY }}
           # ARGS: "-rltgoDzvO --delete"
           local_path: "build/"

@@ -37,8 +37,7 @@ jobs:
     - run: npm run build --if-present
     - name: List files in the repository
       run: |
-        pwd
-        cd build
+        mv build ${{github.workspace}}
         ls
     - run: echo "🍏 build success."
     
@@ -73,5 +72,5 @@ jobs:
           SOURCE: "build/"
           REMOTE_HOST: ${{ secrets.HOST }}    #阿里云的 ip
           REMOTE_USER: "root"    #阿里云用户
-          TARGET: "/home/root/www/build"       #被部署的服务器路径
+          TARGET: "/root/www/build"       #被部署的服务器路径
 

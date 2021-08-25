@@ -28,7 +28,7 @@ jobs:
     #       remote_path: "/root/www/build"
     #       # EXCLUDE: "/dist/, /node_modules/"
     - name: rsync deployments
-      uses: onclesam/rsync-deployments@patch-1
+      uses: contention/rsync-deployments@v1.0.0
       env:
         DEPLOY_KEY: ${{secrets.PRIVATE_KEY}}
         UPLOAD_DIR: 'build'

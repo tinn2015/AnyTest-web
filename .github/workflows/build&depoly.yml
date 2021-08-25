@@ -19,27 +19,27 @@ jobs:
         node-version: [12.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-    - name: Check out repository code
-      uses: actions/checkout@v2
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-    - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+    # steps:
+    # - uses: actions/checkout@v2
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    #     cache: 'npm'
+    # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+    # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+    # - name: Check out repository code
+    #   uses: actions/checkout@v2
+    # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+    # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
     # - run: npm install
     # - run: npm run build --if-present
     # - name: List files in the repository
     #   run: |
     #     mv build ${{github.workspace}}/dist
     #     ls
-    - run: echo "🍏 build success."
+    # - run: echo "🍏 build success."
     
   # deploy:
   #   name: Deploy App
@@ -60,14 +60,31 @@ jobs:
   deploy:
     name: Deploy App
     runs-on: [ubuntu-latest]
+    strategy:
+      matrix:
+        node-version: [12.x]
     needs: [build]
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - run: npm install
       - run: npm run build --if-present
       - name: List files in the repository
         run: |
           mv build ${{github.workspace}}/dist
           ls
+      - run: echo "🍏 build success."
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@main      #可以访问的仓库，实现的上传服务器步骤被封装在此action
         env:

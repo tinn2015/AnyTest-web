@@ -33,12 +33,12 @@ jobs:
       uses: actions/checkout@v2
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
     - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-    - run: npm install
-    - run: npm run build --if-present
-    - name: List files in the repository
-      run: |
-        mv build ${{github.workspace}}/dist
-        ls
+    # - run: npm install
+    # - run: npm run build --if-present
+    # - name: List files in the repository
+    #   run: |
+    #     mv build ${{github.workspace}}/dist
+    #     ls
     - run: echo "🍏 build success."
     
   # deploy:
@@ -62,9 +62,12 @@ jobs:
     runs-on: [ubuntu-latest]
     needs: [build]
     steps:
-      - name: list files
-        run: ｜
-          ls ${{ github.workspace }}
+      - run: npm install
+      - run: npm run build --if-present
+      - name: List files in the repository
+        run: |
+          mv build ${{github.workspace}}/dist
+          ls
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@main      #可以访问的仓库，实现的上传服务器步骤被封装在此action
         env:

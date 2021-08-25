@@ -65,13 +65,13 @@ jobs:
     needs: [build]
     steps:
       - name: list files
-        run: ls
+        run: ls ${{ github.workspace }}
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@main      #可以访问的仓库，实现的上传服务器步骤被封装在此action
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}  #这个是阿里云的私钥
           ARGS: "-avzr --delete"
-          SOURCE: "build"
+          SOURCE: ""
           REMOTE_HOST: ${{ secrets.HOST }}    #阿里云的 ip
           REMOTE_USER: "root"    #阿里云用户
           TARGET: "/root/www/build"       #被部署的服务器路径

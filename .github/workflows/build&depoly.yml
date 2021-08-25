@@ -63,7 +63,8 @@ jobs:
     needs: [build]
     steps:
       - name: list files
-        run: ls ${{ github.workspace }}
+        run: ｜
+          ls ${{ github.workspace }}
       - name: ssh depoly
         uses: easingthemes/ssh-deploy@main      #可以访问的仓库，实现的上传服务器步骤被封装在此action
         env:

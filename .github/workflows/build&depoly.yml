@@ -40,7 +40,6 @@ jobs:
         pwd
         cd build
         ls
-        ls ${{ github.workspace }}
     - run: echo "🍏 build success."
     
   # deploy:
@@ -71,7 +70,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}  #这个是阿里云的私钥
           ARGS: "-avvvvvvzr --delete --progress"
-          SOURCE: "build/"
+          SOURCE: "build"
           REMOTE_HOST: ${{ secrets.HOST }}    #阿里云的 ip
           REMOTE_USER: "root"    #阿里云用户
           TARGET: "/root/www/build"       #被部署的服务器路径

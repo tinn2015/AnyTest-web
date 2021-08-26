@@ -12,7 +12,7 @@ import globalStore from '../store/globalStore'
 
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3002/api/',
+  baseURL: 'http://115.159.122.56/api/',
   timeout: 5000,
   headers: {
     'Authorization': localStorage.getItem('Authorization')

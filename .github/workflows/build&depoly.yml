@@ -112,7 +112,7 @@ jobs:
           url: https://oapi.dingtalk.com/robot/send?access_token=6525aad2e39276d13372712cc778840e8a3acd89294e6c085409a1de748b6f52
           type: markdown
           content: | 
-            # 💯👨‍💻 Success 🎉🎉🎉
-            > 发布通知：depoly success 
+            # 💯👨‍💻 发布通知：Success 🎉🎉🎉
+            > depoly success 
             > 🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}
 

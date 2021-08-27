@@ -73,7 +73,7 @@ jobs:
       - name: start depoly
         uses: fifsky/dingtalk-action@master
         with:
-          url: https://oapi.dingtalk.com/robot/send?6525aad2e39276d13372712cc778840e8a3acd89294e6c085409a1de748b6f52
+          url: https://oapi.dingtalk.com/robot/send?access_token=6525aad2e39276d13372712cc778840e8a3acd89294e6c085409a1de748b6f52
           type: markdown
           content: | 
             # 🍏 发布通知：start depoly

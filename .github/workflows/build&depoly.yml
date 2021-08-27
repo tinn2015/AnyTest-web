@@ -74,7 +74,7 @@ jobs:
         uses: fifsky/dingtalk-action@master
         with:
           url: https://oapi.dingtalk.com/robot/send?access_token=2f5e688993a6573d6fc2a1459436b4a95140f123ce4cc49c626529d95a3b6800
-          type: text
+          type: 'text'
           content: 'start depoly, The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}'
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"

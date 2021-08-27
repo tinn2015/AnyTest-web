@@ -76,7 +76,7 @@ jobs:
           url: https://oapi.dingtalk.com/robot/send?6525aad2e39276d13372712cc778840e8a3acd89294e6c085409a1de748b6f52
           type: markdown
           content: | 
-            # 🍏 start depoly
+            # 🍏 发布通知：start depoly
             > 🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -113,6 +113,6 @@ jobs:
           type: markdown
           content: | 
             # 💯👨‍💻 Success 🎉🎉🎉
-            > depoly success 
+            > 发布通知：depoly success 
             > 🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}
 

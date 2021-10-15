@@ -66,6 +66,10 @@ class Login extends Component {
     })
   }
 
+  postMessage = () => {
+    window.my.postMessage({name:"测试 web-view"});
+  }
+
   render () {
     return (
       <div className="login wh-full flex jc-c ai-c">
@@ -134,6 +138,9 @@ class Login extends Component {
               </Button>
             </Form.Item>
           </Form>
+          <div onClick={this.postMessage}>
+            postMessage
+          </div>
         </div>
       </div>
     )

@@ -138,9 +138,6 @@ class Login extends Component {
               </Button>
             </Form.Item>
           </Form>
-          <div onClick={this.postMessage}>
-            postMessage
-          </div>
         </div>
       </div>
     )

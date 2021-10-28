@@ -37,13 +37,17 @@ class UploadFile extends Component {
     const form = new FormData()
     form.append('file', file)
     uploadFile(form).then(() => {
-      this.getList()
+      setTimeout(() => {
+        this.getList()
+      }, 1000)
     })
   }
 
   deleteFile =  (filePath) => {
     deleteFile({filePath}).then(() => {
-      this.getList()
+      setTimeout(() => {
+        this.getList()
+      }, 1000)
     })
   }
 
